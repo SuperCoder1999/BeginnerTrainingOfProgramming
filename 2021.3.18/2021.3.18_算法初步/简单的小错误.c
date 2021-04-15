@@ -1,6 +1,6 @@
 #include "Head.h"
 
-// 简单练习
+// BC-3 有容乃大
 //int main()
 //{
 //    printf("The size of short is \d bytes.\n", sizeof(short));//这里出错了
@@ -10,17 +10,17 @@
 //    return 0;
 //}
 
-// 打印一个"飞机"
+// BC-6 小飞机
 //#include<stdio.h>
 //int main()
 //{
 //    printf("     **     \n     **     \n");
 //    printf("************\n************\n");
-//    printf("     *  *    \n    *  *    \n");//多一个空格
+//    printf("     *  *    \n    *  *    \n");//提交后，结果错误；原因多一个空格
 //    return 0;
 //}
 
-// 十进制转十六进制
+// BC-7 缩短二进制
 //#include<stdio.h>
 //int main()
 //{
@@ -29,7 +29,7 @@
 //    return 0;
 //}
 
-////反向输出一个四位数（题库中没有，我在这里加的）
+////BC-19 反向输出一个四位数（题库中没有，我在这里加的）
 //int main()
 //{
 //	int a = 0;
@@ -44,13 +44,14 @@
 //}
 
 
-// 十六进制转十进制
+// BC-8 十六进制转十进制
 //int main()
 //{
 //
 //  printf("%15d\n", 0xABCDEF);
 //    return 0;
 //}
+// 方法二
 //int main()// 本来想找一个计时器，可是这个好像不太管用
 //{
 //    double start, finish;
@@ -70,6 +71,7 @@
 //    return 0;
 //}
 
+// BC-9 printf的返回值
 ////第一行为“Hello world!”
 ////第二行为printf(“Hello world!”)调用后的返回值
 //int main()
@@ -78,12 +80,57 @@
 //    return 0;
 //}
 
+// 字符金字塔
+//int main()
+//{
+//    int i = 0;
+//    int j = 0, k = 0;
+//    char num = 0;
+//    scanf("%c", &num);
+//    for (i = 0; i < 5; i++)
+//    {
+//        for (j = 4 - i; j > 0; j--)
+//            printf(" ");
+//        for (k = 0; k <= i; k++)//外循环是半开区间，内循环想要和外循环一样次数，必须是闭区间
+//            printf("%c ", num);
+//        printf("\n");
+//    }
+//    return 0;
+//}
+
+// 出生日期输入输出
+//// 变换思想很重要，不论怎么变化都需要将原数字更改一次
+//int main()
+//{
+//	int value = 0;
+//	scanf("%d", &value);
+//	printf("year=%d\n", value / 10000);// 除10000得到前四位数字，但是并没有改变value
+//	value %= 10000;// 彻底抛弃前四位数字，在后四位数字中操作
+//	printf("month=%02d\n", value / 100);// 只得到前两位数字
+//	printf("date=%02d\n", value % 100);// 得到后两位数字
+//	return 0;
+//}
+//int main()
+//{
+//	int value = 0;
+//	int year = 0, month = 0, date = 0;
+//	scanf("%d", &value);
+//	date = value % 100;
+//	value /= 100;
+//	month = value % 100;
+//	year = value / 100;
+//	printf("year=%d\nmonth=%02d\ndate=%02d", year, month, date);
+//	return 0;
+//}
+//这题中的知识点
 //%0md,对齐时空位置上添加0
 //int main()
 //{
 //	printf("%04d", 1);
 //	return 0;
 //}
+
+// 两数交换在 另一个文件内
 
 //// 不用累计乘法，求2^n（用左移操作符）
 //// 搞错了，这个算法只是整体乘以二
@@ -119,3 +166,22 @@
 //        printf("%d\n", 1 << y);// 或者直接用库函数pow
 //    return 0;
 //}
+
+
+// 2021.4.15 回顾练习时的演草纸
+
+//// int 差不多能存 1E9
+//int main() {
+//	int a = 1000000000;// int 差不多能存 1E9 
+//	printf("%d", a);
+//	return 0;
+//}
+
+int main()
+{
+    double b= 3.156E7;
+    int age;
+    scanf("%d", &age);
+    printf("%f", age * b);
+    return 0;
+}

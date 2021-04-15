@@ -1,4 +1,4 @@
-#include"Head.h"
+//#include"Head.h"
 
 //// ×Ö·û´®Êä³ö
 //int main()

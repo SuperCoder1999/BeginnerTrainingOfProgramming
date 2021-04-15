@@ -1,4 +1,4 @@
-#include"Head.h"
+//#include"Head.h"
 //int main()
 //{
 //    char ch = '0';

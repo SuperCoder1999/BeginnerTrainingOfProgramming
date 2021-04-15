@@ -141,10 +141,8 @@
   <ItemGroup>
     <ClCompile Include="ASCII码.c" />
     <ClCompile Include="两数交换.c" />
-    <ClCompile Include="出生日期输入输出.c" />
     <ClCompile Include="判断字母.c" />
     <ClCompile Include="大小写转换.c" />
-    <ClCompile Include="字符金字塔.c" />
     <ClCompile Include="简单的小错误.c" />
   </ItemGroup>
   <ItemGroup>

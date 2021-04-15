@@ -24,13 +24,7 @@
     <ClCompile Include="判断字母.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="字符金字塔.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="ASCII码.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="出生日期输入输出.c">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="两数交换.c">
