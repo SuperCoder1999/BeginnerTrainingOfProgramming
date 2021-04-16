@@ -18,15 +18,6 @@
     <ClCompile Include="简单的小错误.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="大小写转换.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="判断字母.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="ASCII码.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="两数交换.c">
       <Filter>源文件</Filter>
     </ClCompile>

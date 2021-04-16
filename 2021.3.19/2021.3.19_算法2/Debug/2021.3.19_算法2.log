@@ -1,2 +1,4 @@
 ﻿  小题.c
-  2021.3.19_算法2.vcxproj -> E:\Visual Studio 2019 项目文件\2021.3.19_算法2\Debug\2021.3.19_算法2.exe
+E:\Github\BeginnerTrainingOfProgramming\2021.3.19\2021.3.19_算法2\小题.c(6,1): warning C4305: “初始化”: 从“unsigned __int64”到“float”截断
+E:\Github\BeginnerTrainingOfProgramming\2021.3.19\2021.3.19_算法2\小题.c(7,1): warning C4305: “初始化”: 从“unsigned __int64”到“double”截断
+  2021.3.19_算法2.vcxproj -> E:\Github\BeginnerTrainingOfProgramming\2021.3.19\Debug\2021.3.19_算法2.exe

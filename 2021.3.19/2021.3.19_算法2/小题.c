@@ -1,13 +1,14 @@
 #include"Head.h"
 
-//// float的范围有待理解
+//// 演草纸--float的范围有待理解
 //int main()
 //{
-//	float a= 12345678901234567890;
-//	double b = 12345678901234567890;
+//	float a= 12345678901234567890; // 最大 1E6 .这么说float还没有int大？
+//	double b = 12345678901234567890;// 最大 1E16 
 //	printf("%f\n%f", a,b);
 //}
 
+// BC-26 计算三角形的周长和面积
 //#include<stdio.h>
 //#include<math.h>
 //int main()
@@ -19,7 +20,10 @@
 //    printf("circumference=%.2f area=%.2f", a + b + c, sqrt(p * (p - a) * (p - b) * (p - c)));
 //    return 0;
 //}
-//// 变种水仙花
+
+// BC-37 健康评估  题目不存在
+
+//// BC-38 变种水仙花
 //#include<stdio.h>
 //int main()
 //{
@@ -43,15 +47,18 @@
 //    return 0;
 //}
 
+// BC-20 kiki算数
+// 错误代码：
 //#include<stdio.h>
 //int main()
 //{
 //    int a = 0, b = 0;
 //    scanf("%d%d", &a, &b);
-//    printf("%d", (a * b) % 100); // 是加法！！！！
+//    printf("%d", (a * b) % 100); // 错误原因：是加法！！！！
 //    return 0;
 //}
 
+// BC-21 浮点数的个位数字
 //// float强制转换为int
 //int main()
 //{
@@ -61,7 +68,7 @@
 //	printf("%d", b);
 //	return 0;
 //}
-//int main() // 这样的强制转换也行
+//int main() // 这样的在输入时 强制转换也行
 //{
 //    int a;
 //    scanf("%d", &a);
@@ -69,7 +76,7 @@
 //    return 0;
 //}
 
-//// 总成绩和平均分
+//// 总成绩和平均分计算
 //#include<stdio.h>
 //int main()
 //{
@@ -87,13 +94,14 @@
 //	return 0;
 //}
 
-//// 喝酸奶问题
+//// Kiki和酸奶
 //#include<stdio.h>
 //int main()
 //{
 //    int n, h, m;
-//    while (EOF != scanf("%d %d %d", &n, &h, &m)) printf("%d", n - (m / h) - (m % h));
-//}// 我认为这个是错的
+//    while (EOF != scanf("%d %d %d", &n, &h, &m)) 
+//		printf("%d", n - (m / h) - (m % h));
+//}// 我认为这个copy来的算法是错的
 //int main()
 //{
 //    int n = 0, h = 0, m = 0;
@@ -109,7 +117,7 @@
 
 
 
-//// %c 吸收空格的知识点
+//// 演草纸 【空格】%c 吸收空格的知识点---吸收字符前所有空格
 //int main()
 //{
 //	char ch = '0',c='0';
@@ -117,6 +125,7 @@
 //	printf("**%c**\n**%c**", ch, c);
 //}
 
+// BC-34 进制A+B
 //// 十六进制和八进制在内存中的存储形式都一样，只是输入和输出的格式不一样而已
 //int main()
 //{
@@ -125,7 +134,7 @@
 //	return 0;
 //}
 
-//// 购物
+//// BC-37 网购
 //#include<stdio.h>
 // // 最简算法
 //int main()
@@ -141,18 +150,20 @@
 //    if (price < 0)
 //        printf("0.00");
 //    else
-//        printf("%.2f", price);
+//        printf("%.2f", price);// 通过在分支中修改price，最后进行输出
 //    return 0;
 //}
 
+// BC-39 争夺前五名看 冒泡排序.c 
 
+// BC-40 竞选社长 
 //#include<stdio.h>
 //int main()
 //{
 //    char ch = '0';
 //    int count_A = 0;
 //    int count_B = 0;
-//    while ((ch = getchar()) != '0') // 不理解问什么
+//    while ((ch = getchar()) != '0') // 题目要求以'0'结束
 //    {
 //        if (ch == 'A')
 //            count_A++;
@@ -168,7 +179,6 @@
 //            printf("E");
 //    return 0;
 //}
-
 //// 整行读取的方式
 //#include<stdio.h>
 //#include<string.h>
@@ -197,7 +207,7 @@
 //    return 0;
 //}
 
-//// 测试if-else是否是一条语句
+//// 草稿 -- 测试if-else是否是一条语句----答案是一条
 //#include<stdio.h>
 //int main()
 //{
@@ -210,7 +220,7 @@
 //    return 0;
 //}
 
-
+// BC-46 判断是元音还是辅音
 //// 空格%c能够消除输入值前面的空格
 //#include<stdio.h>
 //// 字符串的应用
@@ -219,7 +229,7 @@
 //	char arr[] = { "AaEeIiOoUu" };
 //	int ch = '0';
 //	while (~scanf(" %c", &ch))// 空格%c能够消除输入值前面的空格
-//								//空格是在缓存区里存着的\n
+//								//空格是清除缓存区里存着的\n，这样就可以免用//getchar();来消除缓存区内的\n
 //	{
 //		//getchar();
 //		int i = 0;
@@ -251,16 +261,18 @@
 //			if (arr[i] == ch)
 //			{
 //
-//				printf("Vowel\n");
+//				printf("Vowel\n");// 元音
 //				break;
 //			}
 //		}
-//		if (i == 10)
-//			printf("Consonant\n");
+//		if (i == 10)// 这里的作用是在arr元音范围内  找不到之后就一定是辅音了
+//			printf("Consonant\n");// 辅音
 //
 //	}
 //	return 0;
 //}
+
+// BC-47 判断是不是字母
 //// 引用isalpha函数，并且采用新的方式消除\n
 //#include<stdio.h>
 //int main()
@@ -278,9 +290,8 @@
 //}
 
 
-
-//#include<stdio.h>
-//// 引用判断大小写的库函数
+// BC - 48 大小写转换
+//// 草稿-- 引用判断大小写的库函数
 //#include<ctype.h>
 //int main()
 //{

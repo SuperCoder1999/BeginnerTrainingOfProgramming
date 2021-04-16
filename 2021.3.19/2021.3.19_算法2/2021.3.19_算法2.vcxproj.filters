@@ -21,7 +21,7 @@
     <ClCompile Include="快速排序.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="不知名排序.c">
+    <ClCompile Include="选择排序.c">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="冒泡排序.c">

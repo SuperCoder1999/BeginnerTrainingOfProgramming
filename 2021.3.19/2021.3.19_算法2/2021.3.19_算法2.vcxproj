@@ -139,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="不知名排序.c" />
+    <ClCompile Include="选择排序.c" />
     <ClCompile Include="冒泡排序.c" />
     <ClCompile Include="字符串的应用.c" />
     <ClCompile Include="小题.c" />

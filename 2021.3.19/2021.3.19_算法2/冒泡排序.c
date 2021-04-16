@@ -1,5 +1,5 @@
 //#include"Head.h"
-//
+// 这算法是在 BC-39 争夺前五名 的做题过程中用到的
 //void Print(int arr[])
 //{
 //    int i = 0;
