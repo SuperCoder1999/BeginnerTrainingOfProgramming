@@ -140,7 +140,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="scanf函数.c" />
-    <ClCompile Include="数字类题目之关于每一位.c" />
     <ClCompile Include="数组赋初值时可以同时做的事情.c" />
     <ClCompile Include="普通练习题.c" />
   </ItemGroup>

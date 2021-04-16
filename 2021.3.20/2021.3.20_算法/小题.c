@@ -1,6 +1,31 @@
 #include"Head.h"
 
-//// 衡量人体胖瘦程度
+// BC-51 三角形判断
+//int main()
+//{
+//    int a = 0, b = 0, c = 0;
+//    while (~scanf("%d%d%d", &a, &b, &c))
+//    {
+//        if (a + b <= c || a + c <= b || b + c <= a)
+//            printf("Not a triangle!\n");
+//        else
+//        {
+//            if (a == b && a == c && b == c)// if(a==b&&a==c) 没必要b==c了吧
+//                printf("Equilateral triangle!\n");
+//            else
+//            {
+//                if (((a == b) + (a == c) + (b == c)) == 1)
+//                    // 也可以写成(a==b||c==b||a==c)
+//                    // 因为前面已经确定了等边三角形的情况。所以这里对多只有一个等于的情况
+//                    printf("Isosceles triangle!\n");
+//                else
+//                    printf("Ordinary triangle!\n");
+//            }
+//        }
+//    }
+//}
+
+//// BC-52 衡量人体胖瘦程度
 //// 问题：float bmi = weight / (high * high / 10000.0);
 //// 变成float bmi = weight / high / high * 10000.0;结果就出错了
 //int main()
@@ -23,7 +48,7 @@
 //    return 0;
 //}
 
-//// 获得月份天数
+//// BC-54 获得月份天数
 //// 新思想：day++;// 默认是28，特殊情况再改变；这和购物的那一题一样
 //int main()
 //{
@@ -45,11 +70,11 @@
 //    }
 //}
 
-// 简单计算器
+// BC-55 简单计算器
 // 问题：float x1 = 0, x2 = 0;// 92*23.3的float类型竟然出错了，float类型没有理解深入
 //int main()
 //{
-//    float x1 = 0, x2 = 0;// float92*23.3竟然出错了，float类型没有理解深入
+//    double x1=0,x2=0;// 用float在92.0000*22.3000=2051.5999会出错
 //    char ch = '0';
 //    while (~scanf("%f%c%f", &x1, &ch, &x2))// 这里应该不用处理\n
 //    {
@@ -65,7 +90,7 @@
 //            }
 //            else
 //            {
-//                float re = 0;
+//                double re=0;// 不知道在这里 float 会不会出错
 //                switch (ch)
 //                {
 //                case '+':
@@ -82,7 +107,144 @@
 //}
 
 
-// 二段数，头大
+//// 数字三角形
+//int main()
+//{
+//    int n = 0;
+//    while (~scanf("%d", &n))
+//    {
+//        int i = 0, j = 0;
+//        for (i = 0; i < n; i++)
+//        {
+//            for (j = 0; j < n; j++)
+//                // 利用规律进行输出
+//                if (i >= j)
+//                    printf("%d ", j + 1);// 从观察到的看 输出的对应着列数
+//                else
+//                    printf("  ");
+//            printf("\n");
+//        }
+//    }
+//    return 0;
+//}
+//// 数字三角形
+//// 不能总局限于i与j的关系的规律
+//int main()
+//{
+//    int n = 0;
+//    while (~scanf("%d", &n))
+//    {
+//        int i = 0, j = 0;
+//        for (i = 0; i < n; i++)
+//        {
+//            for (j = 0; j <= i; j++)// j也是跟着i变化而变化的
+//                // 利用规律进行输出
+//                printf("%d ", j + 1);
+//            printf("\n");
+//        }
+//    }
+//    return 0;
+//}
+
+//// BC-76 公务员面试-去掉一个最高分一个最低分
+//void Exchange(int arr[], int i, int j)
+//{
+//    int tmp=0;
+//    tmp = arr[i];
+//    arr[i] = arr[j];
+//    arr[j] = tmp;
+//}
+//int main()
+//{
+//    // 初始化并输入成绩
+//    int arr[7] = { 0 };
+//    int i = 0;
+//    for (i = 0; i < 7; i++)
+//        scanf("%d", &arr[i]);
+//    // 冒泡排序
+//    int j = 0;
+//    for (i = 0; i < 7; i++)
+//    {
+//        for (j = i + 1; j < 7; j++)
+//            if (arr[i] < arr[j])
+//                Exchange(arr, i, j);
+//    }
+//    int sum = 0;
+//    for (i = 1; i < 6; i++)
+//        sum += arr[i];
+//    printf("%.2f", sum / 5.0);
+//    return 0;
+//}
+
+//// BC-77 有序序列插入一个数
+//void Move(int p_arr[], int n,int loc, int* num)
+//{
+//    int i = 0;
+//    for (i = n - 1; i >= loc; i--)
+//        p_arr[i + 1] = p_arr[i];
+//    p_arr[loc] = *num;
+//}
+//int main()
+//{
+//    // 分配动态内存并输入
+//    int n = 0;
+//    scanf("%d", &n);
+//    int* p = (int*)malloc(sizeof(int) * (n+1));
+//    int i = 0;
+//    for (i = 0; i < n ; i++)
+//        scanf("%d", p + i);
+//
+//    // 插入数字
+//    int num = 0;
+//    scanf("%d", &num);
+//    for (i = 0; i < n ; i++)
+//    {
+//        if (*(p + i) > num)
+//        {
+//            Move(p, n, i, &num);
+//            break;
+//        }
+//        else
+//            *(p + n) = num;
+//    }
+//    for (i = 0; i < n + 1; i++)
+//        printf("%d ", *(p + i));
+//    return 0;
+//}
+//// 有序序列插入一个数
+//int main()
+//{
+//    int n = 0;
+//    scanf("%d", &n);
+//    // 因为说了有序序列的长度所以直接开辟长度为51的数组
+//    int arr[51] = { 0 };
+//    int i = 0;
+//    for (i = 0; i < n; i++)
+//        scanf("%d", &arr[i]);
+//
+//    int num = 0;
+//    scanf("%d", &num);
+//    // 比较并插入
+//    for (i = 0; i < n; i++)
+//    {
+//        if (arr[i] > num)
+//        {
+//            int j = 0;
+//            for (j = n - 1; j >= i; j--)
+//                arr[j + 1] = arr[j];
+//            arr[i] = num;
+//            break;// 一定别忘了break
+//        }
+//        else
+//            arr[n] = num;
+//    }
+//    for (i = 0; i < n + 1; i++)
+//        printf("%d ", arr[i]);
+//    return 0;
+//}
+
+
+// BC-120 小乐乐与二段数，头大
 //int Er(long long n)
 //{
 //    int a = n % 10;
@@ -126,7 +288,6 @@
 //    }
 //    return 0;
 //}
-
 // 哈理工博客的参考答案
 //#include <stdio.h>
 //
@@ -164,9 +325,7 @@
 //
 //    return 0;
 //}
-
-
-
+// 另一个算法
 //#define maxn  10010
 //
 //int a[maxn], b[maxn];
@@ -302,143 +461,5 @@
 //            cout << apt;
 //        cout << endl;
 //    }
-//    return 0;
-//}
-
-
-
-//// 数字三角形
-//int main()
-//{
-//    int n = 0;
-//    while (~scanf("%d", &n))
-//    {
-//        int i = 0, j = 0;
-//        for (i = 0; i < n; i++)
-//        {
-//            for (j = 0; j < n; j++)
-//                // 利用规律进行输出
-//                if (i >= j)
-//                    printf("%d ", j + 1);// 从观察到的看 输出的对应着列数
-//                else
-//                    printf("  ");
-//            printf("\n");
-//        }
-//    }
-//    return 0;
-//}
-//// 数字三角形
-//// 不能总局限于i与j的关系的规律
-//int main()
-//{
-//    int n = 0;
-//    while (~scanf("%d", &n))
-//    {
-//        int i = 0, j = 0;
-//        for (i = 0; i < n; i++)
-//        {
-//            for (j = 0; j <= i; j++)// j也是跟着i变化而变化的
-//                // 利用规律进行输出
-//                printf("%d ", j + 1);
-//            printf("\n");
-//        }
-//    }
-//    return 0;
-//}
-
-//// 公务员面试-去掉一个最高分一个最低分
-//void Exchange(int arr[], int i, int j)
-//{
-//    int tmp=0;
-//    tmp = arr[i];
-//    arr[i] = arr[j];
-//    arr[j] = tmp;
-//}
-//int main()
-//{
-//    // 初始化并输入成绩
-//    int arr[7] = { 0 };
-//    int i = 0;
-//    for (i = 0; i < 7; i++)
-//        scanf("%d", &arr[i]);
-//    // 冒泡排序
-//    int j = 0;
-//    for (i = 0; i < 7; i++)
-//    {
-//        for (j = i + 1; j < 7; j++)
-//            if (arr[i] < arr[j])
-//                Exchange(arr, i, j);
-//    }
-//    int sum = 0;
-//    for (i = 1; i < 6; i++)
-//        sum += arr[i];
-//    printf("%.2f", sum / 5.0);
-//    return 0;
-//}
-
-//// 有序序列插入一个数
-//void Move(int p_arr[], int n,int loc, int* num)
-//{
-//    int i = 0;
-//    for (i = n - 1; i >= loc; i--)
-//        p_arr[i + 1] = p_arr[i];
-//    p_arr[loc] = *num;
-//}
-//int main()
-//{
-//    // 分配动态内存并输入
-//    int n = 0;
-//    scanf("%d", &n);
-//    int* p = (int*)malloc(sizeof(int) * (n+1));
-//    int i = 0;
-//    for (i = 0; i < n ; i++)
-//        scanf("%d", p + i);
-//
-//    // 插入数字
-//    int num = 0;
-//    scanf("%d", &num);
-//    for (i = 0; i < n ; i++)
-//    {
-//        if (*(p + i) > num)
-//        {
-//            Move(p, n, i, &num);
-//            break;
-//        }
-//        else
-//            *(p + n) = num;
-//    }
-//    for (i = 0; i < n + 1; i++)
-//        printf("%d ", *(p + i));
-//    return 0;
-//}
-//// 有序序列插入一个数
-//int main()
-//{
-//    int n = 0;
-//    scanf("%d", &n);
-//    // 因为说了有序序列的长度所以直接开辟长度为51的数组
-//    int arr[51] = { 0 };
-//    int i = 0;
-//    for (i = 0; i < n; i++)
-//        scanf("%d", &arr[i]);
-//
-//    int num = 0;
-//    scanf("%d", &num);
-//    // 比较并插入
-//    for (i = 0; i < n; i++)
-//    {
-//        if (arr[i] > num)
-//        {
-//            int j = 0;
-//            for (j = n - 1; j >= i; j--)
-//                arr[j + 1] = arr[j];
-//            arr[i] = num;
-//            break;// 一定别忘了break
-//        }
-//        else
-//            arr[n] = num;
-//    }
-//    for (i = 0; i < n + 1; i++)
-//        printf("%d ", arr[i]);
 //    return 0;
 //}

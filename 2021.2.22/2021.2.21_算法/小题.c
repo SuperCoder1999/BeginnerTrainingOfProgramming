@@ -1,6 +1,6 @@
 #include"Head.h"
 
-//// 井字棋-----放在VS上运行死循环，但是牛客网上能通过测试
+//// BC-110 井字棋-----放在VS上运行死循环，但是牛客网上能通过测试
 //int main()
 //{
 //    // 存入数据
@@ -8,7 +8,7 @@
 //    int i = 0, j = 0;
 //    for (i = 0; i < 3; i++)
 //        for (j = 0; j < 3; j++)
-//            scanf("%c", &arr[i][j]);
+//            scanf(" %c", &arr[i][j]);
 //    //判断谁赢了
 //    char flag = '0';// 这样就不用分开考虑，直接将‘O'或者'K'赋给flag就行
 //    for (i = 0; i < 3; i++)// 遍历行
@@ -22,6 +22,78 @@
 //    else
 //        if (arr[0][2] == arr[1][1] && arr[1][1] == arr[2][0])// 反对角线
 //            flag = arr[1][1];
+//    if (flag == 'K')
+//        printf("KiKi wins!");
+//    else
+//        if (flag == 'B')
+//            printf("BoBo wins!");
+//        else
+//            printf("No winner!");
+//    return 0;
+//}
+/*int main()
+{
+    // 存入数据
+    char arr[3][3]={0};
+    int i=0,j=0;
+    for(i=0;i<3;i++)
+        for(j=0;j<3;j++)
+            scanf("%c ",&arr[i][j]);
+    //判断谁赢了
+    char flag='0';// 这样就不用分开考虑，直接将‘O'或者'K'赋给flag就行
+    for(i=0;i<3;i++)// 遍历行
+        if(arr[i][0]==arr[i][1]&&arr[i][0]==arr[i][2])
+            flag=arr[i][0];
+    for(j=0;j<3;j++)// 遍历列
+        if(arr[0][j]==arr[1][j]&&arr[0][j]==arr[2][j])
+            flag=arr[0][j];
+    if(arr[0][0]==arr[1][1]&&arr[0][0]==arr[2][2])// 正对角线
+        flag=arr[0][0];
+    else
+        if(arr[0][2]==arr[1][1]&&arr[1][1]==arr[2][0])// 反对角线
+            flag=arr[1][1];
+    if(flag=='K')
+        printf("KiKi wins!");
+    else
+        if(flag=='B')
+            printf("BoBo wins!");
+    else
+        printf("No winner!");
+    return 0;
+}*/
+//int main() // -----对行列判断进行优化，目标是在嵌套循环内直接实现
+//{
+//    // 存入数据
+//    char arr[3][3] = { 0 };
+//    int i = 0, j = 0;
+//    for (i = 0; i < 3; i++)
+//        for (j = 0; j < 3; j++)
+//            scanf("%c ", &arr[i][j]);// 和上面的算法相比较来看，这里是在%c后面加的空格，所以，空格能吸收\n换行符！！
+//    //判断谁赢了
+//    char flag = '0';// 这样就不用分开考虑，直接将‘O'或者'K'赋给flag就行
+//
+//    //for (i = 0; i < 3; i++)// 遍历行
+//    //    if (arr[i][0] == arr[i][1] && arr[i][0] == arr[i][2])
+//    //        flag = arr[i][0];
+//    //for (j = 0; j < 3; j++)// 遍历列
+//    //    if (arr[0][j] == arr[1][j] && arr[0][j] == arr[2][j])
+//    //        flag = arr[0][j];
+//
+//    for (i = 0; i < 3; i++)
+//        for (j = 0; j < 3; j++)
+//        {
+//            if (arr[0][j] == arr[1][j] && arr[0][j] == arr[2][j])
+//                flag = arr[0][j];
+//            if (arr[i][0] == arr[i][1] && arr[i][0] == arr[i][2])
+//                flag = arr[i][0];
+//        }
+//    // 双对角线
+//    if (arr[0][0] == arr[1][1] && arr[0][0] == arr[2][2])// 正对角线
+//        flag = arr[0][0];
+//    else
+//        if (arr[0][2] == arr[1][1] && arr[1][1] == arr[2][0])// 反对角线
+//            flag = arr[1][1];
+//    // 判断谁赢了
 //    if (flag == 'K')
 //        printf("KiKi wins!");
 //    else
@@ -77,7 +149,7 @@
 
 
 
-//// 小乐乐与进制转换------求二进制的方法有些模糊，该复习一下
+//// BC-111 小乐乐与进制转换------求二进制的方法有些模糊，该复习一下
 //int main()
 //{
 //    int n = 0;
@@ -125,7 +197,7 @@
 //    return 0;
 //}
 
-//// 小乐乐求和
+//// BC-112 小乐乐求和
 //int main()
 //{
 //    int n;
@@ -143,12 +215,13 @@
 //    return 0;
 //}
 
+//// 演草纸 
 //int main()
 //{
 //	printf("%d", 10000 % 60);
 //}
 
-//// 小乐乐定闹钟
+//// BC-113 小乐乐定闹钟  ----  时间题，蓝桥杯喜欢考的
 //int main()
 //{
 //    // 输入当前时间
@@ -170,7 +243,7 @@
 //    return 0;
 //}
 
-//// 小乐乐与欧几里得--辗转相除法求最大公约数和最小公倍数------待整理
+//// BC-115 小乐乐与欧几里得--辗转相除法求最大公约数和最小公倍数------待整理
 //int main()
 //{
 //    int n = 0, m = 0;
@@ -218,7 +291,7 @@
 //    printf("%lld", b + n * m / b);
 //}
 
-//// 小乐乐改数字-------如果题目给的数字不是那么长，或许数组（可以查看一下数组的最大长度）就可以做，好像牛客网的长度和VS的不同
+//// BC-116 小乐乐改数字-------如果题目给的数字不是那么长，或许数组（可以查看一下数组的最大长度）就可以做，好像牛客网的长度和VS的不同
 //My_pow(int x, int y)
 //{
 //    int i = 0;
@@ -272,7 +345,7 @@
 //    }
 //}
 
-//// 小乐乐走台阶----斐波那契数列
+//// BC-117 小乐乐走台阶----斐波那契数列 其实对于走台阶这种题我还没有理解深入
 //#include<stdio.h>
 //// 按照简便方法---斐波那契数列做了------这题应该好好思考，为什么。还有这一类题需要整理
 //int main()
@@ -291,7 +364,7 @@
 //    printf("%d", rsl);
 //}
 
-//// 姑且用两道题的合体来解这题--排序+去重
+//// BC-118 小乐乐与排序  姑且用两道题的合体来解这题--排序+去重
 //void Bubble(int arr[], int n)
 //{
 //    int i = 0, j = 0, flag = 0;
@@ -332,14 +405,45 @@
 //            printf("%d", arr[i]);
 //    }
 //}
-#include<stdio.h>
-typedef struct List {
-    int num;
-    struct L* p;
-} L;
-int main()
-{
-    L* head = 0;
-    L arr[100] = { 0 };
 
-}
+//// BC-119 小乐乐与字符串 是一个数据结构与算法 内的算法
+
+//// BC-123 小乐乐找最大数
+// 方法一：冒泡排序；方法二：数组边输入边排序；----有问题，这里定义的max取值无法确定
+// 方法三：两两比较
+//int main()
+//{
+//    int arr[4];
+//    int i = 0;
+//    // int max=0; 取值无法确定
+//    for (i = 0; i < 4; i++)
+//        scanf("%d", &arr[i]);
+//    int max = arr[0];
+//    for (i = 1; i < 4; i++)
+//        max = max > arr[i] ? max : arr[i];// 新思维
+//          // max>arr[i]?max:arr[i];需要赋值的！
+//    printf("%d", max);
+//    return 0;
+//}
+
+//// BC-136 KiKi去重整数并排序  ---  和上面的去重排序一样。不过这里有范围所以可以用桶排序
+//// 由于每个数字都大于1 所以可以采用桶排
+//int main()
+//{
+//    int arr[100000] = { 0 };
+//    int tmp = 0;
+//    int i = 0;
+//    int n = 0;
+//    int max = 0;
+//    scanf("%d", &n);
+//    for (i = 0; i < n; i++)
+//    {
+//        scanf("%d", &tmp);
+//        arr[tmp] = tmp;
+//        max = max > tmp ? max : tmp;
+//    }
+//    for (i = 0; i <= max; i++)// 这里i需要等于max，因为max一定是由数字的
+//        if (arr[i])
+//            printf("%d ", arr[i]);
+//    return 0;
+//}

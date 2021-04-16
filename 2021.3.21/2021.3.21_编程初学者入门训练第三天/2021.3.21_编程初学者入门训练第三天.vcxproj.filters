@@ -18,9 +18,6 @@
     <ClCompile Include="普通练习题.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="数字类题目之关于每一位.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="数组赋初值时可以同时做的事情.c">
       <Filter>源文件</Filter>
     </ClCompile>

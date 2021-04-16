@@ -141,7 +141,6 @@
   <ItemGroup>
     <ClCompile Include="选择排序.c" />
     <ClCompile Include="冒泡排序.c" />
-    <ClCompile Include="字符串的应用.c" />
     <ClCompile Include="小题.c" />
     <ClCompile Include="库函数排序qsort的应用.c" />
     <ClCompile Include="快速排序.c" />

@@ -30,9 +30,6 @@
     <ClCompile Include="库函数排序qsort的应用.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="字符串的应用.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Head.h">
